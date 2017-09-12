@@ -26,7 +26,7 @@ export {template}
  	 }
  	 shouldComponentUpdate(nextProps,nextState){
  	 	return !is(fromJS(this.props),fromJS(nextProps))
- 	 	||!(is(fromJS(this.state),fromJS(nextProps)));
+ 	 	||!(is(fromJS(this.state),fromJS(nextState)));
  	 }
  	 render(){
  	 	let {title,titleStyle,leftWrapper,handleClick,leftMode}=this.props;
@@ -39,7 +39,6 @@ export {template}
 
         }
  	 	return (
-
  	 		<header className='hxq-header' style={titleStyle}>
                <div className='hxq-left-header hxq-icon' onClick={handleClick}>
                    <i className='hxq-header-left' data-code='f0c9' data-icon='&#xf0c9;' style={leftMode==1?{'display':'block'}:{'display':'none'}}></i>
