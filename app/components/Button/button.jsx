@@ -23,23 +23,45 @@ class MyComponent extends Component{
     handleBtnClick(btnCB,key){
         btnCB(key);
     }
+    transformStyle=(style)=>{
+    	var wrapperClass='';
+        switch(style){
+            case 'borderTop':
+	            wrapperClass="btn-border-top";
+	            break;
+            case 'borderRight':
+	            wrapperClass="btn-border-right";
+	            break;
+            case 'borderLeft':
+	            wrapperClass="btn-border-left";
+	            break;
+            case 'borderBottom':
+	            wrapperClass="btn-border-bottom";
+	            break;
+        }
+        return wrapperClass;
+    }
 	render(){
 		//
 		let {btn}=this.props;
-		var listArr=[];
-		var btnList=btn.btnList;
-		var btnCallBack=btn['btnCallBack'];
+		var listArr=[],
+		    btnList=btn.btnList,
+		    btnCallBack=btn['btnCallBack'],
+		    btnStyle=btn['btnStyle'],wrapperClass='';
+		if(btnStyle){
+			wrapperClass=this.transformStyle(btnStyle['border']);
+		}    
 		for(let i=0,len=btnList.length;i<len;i++){
-			var btnItem=btnList[i];
+			var btnItem=btnList[i],borderStyle=btnItem['border'],borderClass=this.transformStyle(borderStyle);
             listArr.push(
-                <div key={'btn-'+i} className='hxq-btn-item' style={btnItem['btnStyle']} 
+                <div key={'btn-'+i} className={'hxq-btn-item '+borderClass} style={btnItem['btnStyle']} 
                 onClick={this.handleBtnClick.bind(this,btnCallBack,btnItem['key'])}>
                     {btnItem['btnText']}
                 </div>
             );
 		} 
 		return (
-           <div className='hxq-component-btn'>
+           <div className={'hxq-component-btn '+wrapperClass}>
                 {listArr}
            </div>
 		)

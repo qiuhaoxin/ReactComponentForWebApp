@@ -1,6 +1,7 @@
 import React,{Component,PropsType} from 'react';
 import {is,fromJS} from 'immutable';
 import './dialog.less';
+import Button from '../Button/button.jsx'
 
 class MyComponent extends Component{
 	 static defaultProps={
@@ -9,11 +10,6 @@ class MyComponent extends Component{
      constructor(props,context){
      	super(props,context);
      }
-     getInitialState(){
-     	this.state={
-            show:false
-     	}
-     }
      componentWillMount(){
 
      }
@@ -21,26 +17,39 @@ class MyComponent extends Component{
 
      }
      shouldComponentUpdate(nextProps,nextState){
-          return !is(fromJS(this.props,fromJS(nextProps)))||!is(fromJS(this.state),fromJS(nextState));
+          return !is(fromJS(this.props),fromJS(nextProps))||!is(fromJS(this.state),fromJS(nextState));
      }
      
      render(){
-     	var {title,content,btns}=this.props;
+     	var {title,content,btns,showDialog}=this.props,style={};
      	title=title||'弹框提示';
-
-     	<div className='hxq-dlg-wrapper displayflex'>
-             <div className='hxq-dlg-body'>
-                <div className='hxq-dlg-title'>
-                 {title}
-                </div>
-                <div className='hxq-dlg-content'>
-                   {content}
-                </div>
-                <div className='hxq-dlg-btns hxq-btns'>
-
-                </div>
-             </div>
-     	</div>
+        if(showDialog){
+            style['visibility']='visible';
+            style['zIndex']=100;
+        }else{
+            style['visibility']='hidden';
+            style['zIndex']=0;
+        }
+        return (
+            <div className='hxq-dlg-wrapper displayflex' style={style}>
+                <div className='hxq-dlg-inner'>
+                    <div className='hxq-dlg-body'>
+                        <div className='hxq-dlg-title'>
+                           {title}
+                        </div>
+                        <div className='hxq-dlg-content'>
+                           <div className='hxq-dlg-content-text'>
+                              {content}
+                           </div>
+                        </div>
+                        <div className='hxq-dlg-btns hxq-btns'>
+                              <Button btn={btns}></Button>
+                        </div>
+                    </div>
+                </div>    
+            </div>
+        )
+     
      }
 
 }
