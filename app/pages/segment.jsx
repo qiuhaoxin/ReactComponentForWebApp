@@ -15,7 +15,7 @@ class Main extends Component{
         },
         segment1:{
            style:{
-           	  width:'120px',
+           	  width:'140px',
 
            },
            itemList:[
@@ -23,9 +23,13 @@ class Main extends Component{
               {sgmName:'电话',sgmStyle:{}}
            ],
            selectedIndex:0,
+           selectedStyle:{
+               background:'#3dbaff',
+               color:'#fff'
+           },
            needIndicator:false,
            needIndicator:{
-           	
+
            }
         }
 	}
@@ -43,8 +47,10 @@ class Main extends Component{
            <div className='hxq-page-sgm'>
                 <Header title={this.props.header.title} titleStyle={this.props.header.titleStyle} 
                 leftWrapper={this.props.header.leftWrapper} handleClick={this.handleMainPage}></Header>
-
-                <Segment config={this.props.segment1}></Segment>
+                <div className='displayflex flexcenter' style={{height:'45px'}}>
+                    <Segment config={this.props.segment1}></Segment>
+                </div>
+            
            </div>
 		)
 	}

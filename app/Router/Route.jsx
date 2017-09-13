@@ -23,6 +23,11 @@ const Dialog=(location,cb)=>{
        	  cb(null,require('../pages/dialog.jsx').default);
        },'Dialog')
 }
+const Segment=(location,cb)=>{
+       require.ensure([],require=>{
+       	  cb(null,require('../pages/segment.jsx').default);
+       },'Segment')
+}
 
 const RouterConfig=(
 	    <Router history={history}>
@@ -31,6 +36,7 @@ const RouterConfig=(
 	           <Route path='index' component={index}></Route>
 	           <Route path='setting' getComponent={Setting}></Route>
 	           <Route path='dialog' getComponent={Dialog}></Route>
+	           <Route path='segment' getComponent={Segment}></Route>
 	           <Redirect from='*' to='/' />
 	       </Route>
 	    </Router>

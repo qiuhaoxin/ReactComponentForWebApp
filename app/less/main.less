@@ -6,13 +6,17 @@
   box-sizing:border-box;
 }
 a{
-	text-decoration:none;
+	text-decoration:none;color:#555;
 }
 .displayflex{
-	display:flex;
 	display:-webkit-flex;
 	display:-webkit-box;
 	display:-moz-flex;
+	display:flex;
+}
+.flexcenter{
+    justify-content:center;
+    align-items:center;
 }
 .hxq-scrolling{
 	-webkit-overflow-scrolling:touch;
@@ -35,7 +39,8 @@ a{
 .hxq-pageview{
 	height:100%;
 	width:100%;
-	overflow:auto;
+	overflow-y:auto;
+	overflow-x:hidden;
 	position:absolute;
 	display:-webkit-box;
 	display:-webkit-flex;
