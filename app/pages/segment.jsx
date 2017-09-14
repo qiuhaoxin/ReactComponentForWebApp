@@ -27,9 +27,52 @@ class Main extends Component{
                background:'#3dbaff',
                color:'#fff'
            },
-           needIndicator:false,
-           needIndicator:{
+           indicatorStyle:{
 
+           }
+        },
+        segment2:{
+        	style:{
+        		border:'1px solid orange',
+        		borderRadius:'20px'
+        	},
+        	itemList:[
+               {sgmName:'首页',sgmStyle:{width:'80px'}},
+               {sgmName:'新闻',sgmStyle:{width:'80px'}},
+               {sgmName:'资讯',sgmStyle:{width:'80px'}}
+        	],
+        	selectedIndex:0,
+        	selectedStyle:{
+        		backgroundColor:'orange',
+        		color:'#fff'
+        	},
+            indicatorStyle:{
+
+           }
+        },
+        segment3:{
+        	style:{
+        		border:'0',
+        		borderRadius:'20px',
+        		background:'rgb(43,62,77)',
+        		color:'#fff'
+        	},
+        	itemList:[
+               {sgmName:'中国',sgmStyle:{width:'80px'}},
+               {sgmName:'中国香港',sgmStyle:{width:'80px'}},
+               {sgmName:'国外',sgmStyle:{width:'80px'}},
+               {sgmName:'中国台湾',sgmStyle:{width:'80px'}}
+        	],
+        	selectedIndex:0,
+        	selectedStyle:{
+
+        	},
+            indicatorStyle:{
+                position:'absolute',
+                height:'32px',
+                width:'80px',
+                borderRadius:'16px',
+                backgroundColor:'rgb(143,173,220)'
            }
         }
 	}
@@ -50,7 +93,12 @@ class Main extends Component{
                 <div className='displayflex flexcenter' style={{height:'45px'}}>
                     <Segment config={this.props.segment1}></Segment>
                 </div>
-            
+                 <div className='displayflex flexcenter' style={{height:'50px'}}>
+                    <Segment config={this.props.segment2}></Segment>
+                </div>
+                 <div className='displayflex flexcenter' style={{height:'50px'}}>
+                    <Segment mode={'2'} config={this.props.segment3}></Segment>
+                </div>
            </div>
 		)
 	}

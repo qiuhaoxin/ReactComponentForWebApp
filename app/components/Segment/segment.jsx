@@ -30,20 +30,28 @@ class MyComponent extends Component{
         for(let i=0,len=config.itemList.length;i<len;i++){
         	var segItem=config.itemList[i];
         	if(i==this.state.selectedIndex){
-        		selectedStyle=config.selectedStyle;
+        		selectedStyle=Object.assign({},segItem.sgmStyle,config.selectedStyle);
         	}else{
-        		selectedStyle={};
+        		selectedStyle=Object.assign({},segItem.sgmStyle);
         	}
             segArr.push(
                <div className='hxq-sgm-item' id={'sgm'+i} ref={'sgm'+i} key={'segment'+i} style={selectedStyle} 
                onClick={this.changeSegment.bind(this,i)}>
-                   {segItem['sgmName']}
+                   <span className='hxq-sgm-text'>{segItem['sgmName']}</span>
                </div>
             )
         }
+        var indicator="",width=config.itemList[0].sgmStyle['width'];
+        var indicatorStyle={};
+        width=width && (width.replace('px',''));
+        indicatorStyle['left']=(width||0) * this.state.selectedIndex +"px";
+        indicator=this.state.mode=='2' ? 
+        (<div className='hxq-sgm-indicator' style={Object.assign({},indicatorStyle,config.indicatorStyle)}></div>):"";
+
 		return (
             <div className='hxq-sgm-wrapper' style={config.style}>
-                {segArr} 
+                {indicator}
+                {segArr}      
             </div>
 		)
 	}
