@@ -8,7 +8,8 @@ import ScrollImg from './swiper/swiper';
 import Button from './Button/button'
 import NiceCell from './NiceCell/niceCell.jsx';
 import Switch from './Switch/switch';
-import MenuLayout from './MenuLayout/menuLayout'
+import MenuLayout from './MenuLayout/menuLayout';
+import Image from './Image/image.jsx'
 
 class Main extends Component {
       static defaultProps={
@@ -74,7 +75,10 @@ class Main extends Component {
                    </div>
                 </div>
                 <div className={'hxq-mainpage-slider displayflex '+slideStyle}>
-                    <div className='hxq-slider-top'></div>
+                    <div className='hxq-slider-top'>
+                       <Image imgSrc='../app/img/haoxin_qiu.jpg' imgStyle={{borderRadius:'50%',width:'60px',height:'60px','marginTop':'30px'}}></Image>
+                       <span className='displayflex' style={{justifyContent:'center','marginTop':'7px'}}>{'haoxin_qiu'}</span>
+                    </div>
                     <div className='hxq-slider-bt'>
                          <MenuLayout></MenuLayout>
                     </div>

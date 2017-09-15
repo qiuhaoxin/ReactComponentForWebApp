@@ -5,7 +5,7 @@ import {Header,template} from '../components/common/minin'
 import Segment from '../components/Segment/segment.jsx'
 class Main extends Component{
 	static defaultProps={
-		header:{
+		    header:{
              title:'Segment Demo',
             titleStyle:{
               color:'#fff',

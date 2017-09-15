@@ -28,6 +28,11 @@ const Segment=(location,cb)=>{
        	  cb(null,require('../pages/segment.jsx').default);
        },'Segment')
 }
+const Tabbar=(location,cb)=>{
+	   require.ensure([],require=>{
+	   	  cb(null,require('../pages/tabbar.jsx').default);
+	   },'Tabbar')
+}
 
 const RouterConfig=(
 	    <Router history={history}>
@@ -37,6 +42,7 @@ const RouterConfig=(
 	           <Route path='setting' getComponent={Setting}></Route>
 	           <Route path='dialog' getComponent={Dialog}></Route>
 	           <Route path='segment' getComponent={Segment}></Route>
+	           <Route path='tabbar' getComponent={Tabbar}></Route>
 	           <Redirect from='*' to='/' />
 	       </Route>
 	    </Router>
