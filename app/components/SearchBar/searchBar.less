@@ -1,0 +1,41 @@
+.hxq-srb-wrapper{
+	background-color:rgb(201,201,201);position:fixed;top:45px;width:100%;left:0;height:44px;overflow:hidden;
+}
+.hxq-searchbar{
+	padding:0 8px;
+	border-bottom:1px solid #b4b4b4;
+	height:100%;display:flex;align-items:center;
+}
+.hxq-srb-input{
+	position:relative;width:100%;flex-shrink:1;height:28px;flex-shrink:1;
+}
+.hxq-srb-input input[type='search']{
+	border:none;width:100%;height:100%;display:block;font-size:14px;border-radius:5px;color:#000;padding:0 28px;
+	background-size:13px 13px;outline:none;
+	   background:#fff url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 13 13' enable-background='new 0 0 13 13'><g><path fill='%23939398' d='M5,1c2.2,0,4,1.8,4,4S7.2,9,5,9S1,7.2,1,5S2.8,1,5,1 M5,0C2.2,0,0,2.2,0,5s2.2,5,5,5s5-2.2,5-5S7.8,0,5,0 L5,0z'/></g><line stroke='%23939398' stroke-miterlimit='10' x1='12.6' y1='12.6' x2='8.2' y2='8.2'/></svg>") no-repeat 8px center;
+    background-size:13px 13px;
+    outline:none;
+}
+.hxq-srb-clear{
+	    background: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'><circle cx='14' cy='14' r='14' fill='%238e8e93'/><line stroke='%23ffffff' stroke-width='2' stroke-miterlimit='10' x1='8' y1='8' x2='20' y2='20'/><line fill='none' stroke='%23ffffff' stroke-width='2' stroke-miterlimit='10' x1='20' y1='8' x2='8' y2='20'/></svg>") no-repeat center;
+    -webkit-background-size: 14px 14px;
+    background-size:14px 14px;position:absolute;right:0;top:0;height:28px;width:28px;pointer-events:none;opacity:0;
+    cursor:pointer;-webkit-transition-duration:300ms;transition-duration:300ms;
+}
+.hxq-srb-cancel{
+	-webkit-transition-duration:300ms;
+	transition-duration:300ms;
+	-webkit-transform:translate3d(0,0,0);
+	transform:traslate3d(0,0,0);
+	cursor:pointer;font-size:17px;margin-left:0px;opacity:0;flex-shrink:0;margin-right:-53px;
+}
+a.hxq-srb-cancel{
+	color:#007aff;
+}
+.hxq-srb-active .hxq-srb-cancel{
+	margin-left:8px;opacity:1;pointer-events:auto;
+}
+.hxq-srb-noempty .hxq-srb-clear{
+	opacity:1;
+	pointer-events:auto;
+}

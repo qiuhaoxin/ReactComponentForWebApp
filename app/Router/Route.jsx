@@ -33,7 +33,11 @@ const Tabbar=(location,cb)=>{
 	   	  cb(null,require('../pages/tabbar.jsx').default);
 	   },'Tabbar')
 }
-
+const SearchBar=(location,cb)=>{
+	   require.ensure([],require=>{
+	   	  cb(null,require('../pages/searchbar.jsx').default);
+	   },'SearchBar')
+}
 const RouterConfig=(
 	    <Router history={history}>
 	       <Route path="/" component={Roots}>
@@ -43,6 +47,7 @@ const RouterConfig=(
 	           <Route path='dialog' getComponent={Dialog}></Route>
 	           <Route path='segment' getComponent={Segment}></Route>
 	           <Route path='tabbar' getComponent={Tabbar}></Route>
+	           <Route path='searchbar' getComponent={SearchBar}></Route>
 	           <Redirect from='*' to='/' />
 	       </Route>
 	    </Router>
