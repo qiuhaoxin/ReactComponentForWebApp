@@ -1,0 +1,20 @@
+.hxq-radio-wrapper{
+	display:flex;flex-direction:row;justify-content:center;align-items:center;width:100%;margin-top:14px;
+}
+input{
+	-webkit-appearance:none;
+	appearance:none;outline:none;
+}
+.hxq-radio-item{
+	margin-left:18px;
+}
+.hxq-radio-item>input{
+	width:26px;height:26px;position:relative;border:0;outline:none;vertical-align:middle;background:none;overflow:visible
+}
+.hxq-radio-item input:before{
+	content:'';display:block;width:20px;height:20px;border-radius:13px;border:1px solid #dfe0e1;
+	position:absolute;left:0;top:0
+}
+.selected input:after{
+	content:'';position:absolute;display:block;left:6px;top:6px;border-radius:5px;background:#18b4ed;width:10px;height:10px;
+}

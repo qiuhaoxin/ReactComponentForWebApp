@@ -15,8 +15,10 @@ var utilility=(function(){
             	ele.classList.add(className);
             }
 		},
-		removeClass:function(){
-
+		removeClass:function(ele,className){
+            if(ele && className && this.hasClass(ele,className)){
+                ele.classList.remove(className);
+            }
 		}
 	}
     return new MyUtils();

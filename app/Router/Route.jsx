@@ -36,7 +36,17 @@ const Tabbar=(location,cb)=>{
 const SearchBar=(location,cb)=>{
 	   require.ensure([],require=>{
 	   	  cb(null,require('../pages/searchbar.jsx').default);
-	   },'SearchBar')
+	   },'SearchBar');
+}
+const ListView=(location,cb)=>{
+	   require.ensure([],require=>{
+	   	  cb(null,require('../pages/listViewDemo.jsx').default);
+	   },'ListView');
+}
+const Form=(location,cb)=>{
+	   require.ensure([],require=>{
+	   	  cb(null,require('../pages/form.jsx').default);
+	   },'Form');
 }
 const RouterConfig=(
 	    <Router history={history}>
@@ -48,6 +58,8 @@ const RouterConfig=(
 	           <Route path='segment' getComponent={Segment}></Route>
 	           <Route path='tabbar' getComponent={Tabbar}></Route>
 	           <Route path='searchbar' getComponent={SearchBar}></Route>
+	           <Route path='listview' getComponent={ListView}></Route>
+	           <Route path='form' getComponent={Form}></Route>
 	           <Redirect from='*' to='/' />
 	       </Route>
 	    </Router>
